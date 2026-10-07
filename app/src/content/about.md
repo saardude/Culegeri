@@ -52,9 +52,13 @@ The Institute's trip index is the primary source: each of its 101 entries become
 
 The context strip beside the journey map lists dated events: border changes, Bartók's publications of Romanian material, his statements on folk music and nationalism, and their reception. Each entry summarises a cited source; where the Institute's *Béla Bartók Writings* database holds the text, its bibliographic data are taken from there (HUN-REN BTK ZTI 2021b). The 1937 essay on folk-song research and nationalism and the 1942 essay "Race Purity in Music" are cited by their first printings (Bartók 1937, 166–68; Bartók 1942, 153–55). The strip presents documents; it takes no position.
 
+### Legibility
+
+Records with a wax-cylinder recording carry a legibility score from 0 (almost illegible) to 1 (perfectly legible), so the explorer can be limited to cylinder recordings and filtered or sorted by how well they can be heard. Gramophone discs of 1936 to 1938 and modern recordings of Bartók's compositions are not scored. The score is an automatic estimate. Sixty per cent of it measures how clearly the voice or instrument comes through: the voice is first separated from the surface noise (Défossez 2021), then judged on its estimated intelligibility (Kumar et al. 2023), on whether a speech recogniser finds the catalogue's first line in it (Radford et al. 2023), and on how distinctly its notes begin. Forty per cent measures the noise itself: a background-noise rating (Reddy, Gopal, and Cutler 2022) and hiss. The weights were fitted to the author's ratings of twenty cylinders, with which the score agrees in rank order at 0.86 (Spearman). Some cylinders carry a short spoken clip beside the song; clips are scored but not counted in the record's score. No instrumental cylinder was among the twenty, so their scores are the least certain. The scripts, the ratings and every track's score are in the repository under `audio/` and `data/recording-quality.json`.
+
 ### Use of an AI model
 
-Claude (Fable 5.1), a large language model, was used to build this project: to write the scraping and data-building code, to resolve place names, to assemble the journey itineraries from the cited sources, and to run the optical music recognition experiment. Its output was checked against the sources and the catalogue. It was useful for speed over a large catalogue, for consistent citations across many records, and for pipelines that can be re-run with the same result. It did not write the melodies' metadata; that is the Institute's and the printed edition's, and every record still links to its original entry.
+Claude (Fable 5.1), a large language model, was used to build this project: to write the scraping and data-building code, to resolve place names, to assemble the journey itineraries from the cited sources, to run the optical music recognition experiment, and to build and calibrate the legibility score. Its output was checked against the sources and the catalogue. It was useful for speed over a large catalogue, for consistent citations across many records, and for pipelines that can be re-run with the same result. It did not write the melodies' metadata; that is the Institute's and the printed edition's, and every record still links to its original entry.
 
 ## Sources
 
@@ -116,7 +120,11 @@ Kodály's manuscript melody collection, compiled between 1905 and 1958, is part 
 
 ### Percy Grainger
 
-Grainger's Edison cylinders of English, Danish, Rarotongan and Māori singers, made from 1906, are held at the Grainger Museum of the University of Melbourne; the folk-song manuscripts are catalogued at the Vaughan Williams Memorial Library in London (Grainger Museum n.d.; VWML n.d.). Each recording carries a date and a place, which is all the model needs.
+Grainger's Edison cylinders of English, Danish, Rarotongan and Māori singers, made from 1906, are held at the Grainger Museum of the University of Melbourne; the folk-song manuscripts are catalogued at the Radford, Alec, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever. 2023. "Robust Speech Recognition via Large-Scale Weak Supervision." In *Proceedings of the 40th International Conference on Machine Learning*. https://arxiv.org/abs/2212.04356.
+
+Reddy, Chandan K. A., Vishak Gopal, and Ross Cutler. 2022. "DNSMOS P.835: A Non-Intrusive Perceptual Objective Speech Quality Metric to Evaluate Noise Suppressors." In *ICASSP 2022: IEEE International Conference on Acoustics, Speech and Signal Processing*. https://arxiv.org/abs/2110.01763.
+
+Vaughan Williams Memorial Library in London (Grainger Museum n.d.; VWML n.d.). Each recording carries a date and a place, which is all the model needs.
 
 ### Fieldwork today
 
@@ -146,6 +154,8 @@ Bartók, Béla, ifj. 2021. *Bartók Béla életének krónikája*. Edited by Vá
 
 CARTO. n.d. "Attributions." Accessed September 28, 2026. https://carto.com/attributions.
 
+Défossez, Alexandre. 2021. "Hybrid Spectrogram and Waveform Source Separation." In *Proceedings of the ISMIR 2021 Workshop on Music Source Separation*. https://arxiv.org/abs/2111.03600.
+
 GIStory. n.d. "GISta Hungarorum (OTKA K 111766)." Accessed September 28, 2026. https://www.gistory.hu/g/en/gistory/otka.
 
 Grainger Museum, University of Melbourne. n.d. Home page. Accessed September 28, 2026. https://grainger.unimelb.edu.au/.
@@ -161,6 +171,8 @@ HUN-REN BTK Institute for Musicology (HUN-REN BTK ZTI). 2021a. "Béla Bartók, t
 HUN-REN BTK Institute for Musicology (HUN-REN BTK ZTI). 2021b. "Béla Bartók Writings." Edited by Viola Biró. Accessed September 28, 2026. https://bartok-irasai.zti.hu/en/.
 
 Kelemen, Imre. 1978. "Bartók román népzenegyűjtő útjai." *Acta Academiae Paedagogicae Agriensis*, n.s., 14: 399–415. http://publikacio.uni-eszterhazy.hu/689/.
+
+Kumar, Anurag, Ke Tan, Zhaoheng Ni, Pranay Manocha, Xiaohui Zhang, Ethan Henderson, and Buye Xu. 2023. "TorchAudio-Squim: Reference-less Speech Quality and Intelligibility Measures in TorchAudio." In *ICASSP 2023: IEEE International Conference on Acoustics, Speech and Signal Processing*. https://arxiv.org/abs/2304.01448.
 
 Lampert, Vera. 2008a. "Bartók and the Berlin School of Ethnomusicology." *Studia Musicologica* 49 (3–4): 383–405. https://doi.org/10.1556/smus.49.2008.3-4.9.
 

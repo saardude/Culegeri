@@ -1,0 +1,16 @@
+# audio/run_legibility.py, Python 3.11. Versions of the first full run (Windows 11, RTX 5060 Ti).
+# First:  pip install torch==2.11.0 torchaudio==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+# (RTX 50 series / sm_120 needs the CUDA 12.8 wheels). ffmpeg must be on PATH.
+faster-whisper==1.2.1
+ctranslate2==4.8.2
+speechmos==0.0.1.1
+onnxruntime==1.30.0
+librosa==0.11.0
+soundfile==0.14.0
+scipy==1.17.1
+numpy==2.4.6
+rapidfuzz==3.14.6
+requests==2.34.2
+# CUDA 12 cuBLAS and cuDNN 9 for CTranslate2 on Windows (run_legibility.py adds their bin/ dirs to the DLL path)
+nvidia-cublas-cu12==12.9.2.10
+nvidia-cudnn-cu12==9.27.0.42

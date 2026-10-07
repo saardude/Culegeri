@@ -35,6 +35,11 @@ borders of the day, so that a melody, its village and its trip can be read toget
   inferred are marked separately, and conflicts between sources are kept as notes.
 - **Borders** of 1910, 1914, 1920 and today, so a trip can be read against the state of
   the time.
+- **Legibility** of the wax-cylinder recordings: 4,884 records with a playable cylinder carry an
+  automatic score from 0 (almost illegible) to 1 (perfectly legible), 60% clarity of the voice
+  or instrument and 40% noise, calibrated against the author's own ratings. The explorer can be
+  limited to cylinder recordings and filtered or sorted by it. Method and scripts in `audio/`,
+  scores in `data/recording-quality.json`.
 
 The full account of sources, limits and use cases is on the site's
 [About and sources](https://culegeri.vercel.app/about) page, which also lists the

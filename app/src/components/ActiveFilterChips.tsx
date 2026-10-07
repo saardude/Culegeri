@@ -29,6 +29,8 @@ function removalPatch(chip: Chip, query: Query): Partial<Query> {
       return { collector: query.collector.filter((c) => c !== chip.value) }
     case 'year':
       return { yearFrom: undefined, yearTo: undefined }
+    case 'recording':
+      return { cylinder: undefined }
     case 'q':
       return { q: '' }
     case 'unmapped':

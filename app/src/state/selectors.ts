@@ -17,8 +17,8 @@ import {
 } from './query'
 import { sortSongs } from './sort'
 
-export type FacetKey = 'place' | 'q' | 'genre' | 'style' | 'performance' | 'instrument' | 'collector' | 'year' | 'unmapped' | 'journey'
-export const FACET_KEYS: FacetKey[] = ['place', 'q', 'genre', 'style', 'performance', 'instrument', 'collector', 'year', 'unmapped', 'journey']
+export type FacetKey = 'place' | 'q' | 'genre' | 'style' | 'performance' | 'instrument' | 'collector' | 'year' | 'recording' | 'unmapped' | 'journey'
+export const FACET_KEYS: FacetKey[] = ['place', 'q', 'genre', 'style', 'performance', 'instrument', 'collector', 'year', 'recording', 'unmapped', 'journey']
 
 export type Predicate = (s: Song) => boolean
 export type Counts = Map<string, number>
@@ -76,6 +76,10 @@ export interface Derived {
   pageCount: number
   facetCounts: { genre: Counts; style: Counts; performance: Counts; instrument: Counts; collector: Counts }
   yearHistogram: Bin[]
+  /** Records with a wax-cylinder recording under every filter except the recording filter. */
+  cylinderCount: number
+  /** Legibility of those records in 20 bins of 0.05 (`from` / `to` in hundredths: 0-4, 5-9, ... 95-100). */
+  legibHistogram: Bin[]
   placeTree: PlaceNode[]
   mapLevel: 'county' | 'village'
   mapPoints: MapPoint[]
@@ -142,6 +146,8 @@ export function buildPredicates(input: DeriveInput): Record<FacetKey, Predicate>
   const search = searchIds ? new Set(searchIds) : null
   const from = query.yearFrom
   const to = query.yearTo
+  const lo = query.legibFrom ?? 0
+  const hi = query.legibTo ?? 1
   return {
     place: placePredicate(query),
     q: search ? (s) => search.has(s.id) : TRUE,
@@ -160,6 +166,7 @@ export function buildPredicates(input: DeriveInput): Record<FacetKey, Predicate>
             if (to !== undefined && y > to) return false
             return true
           },
+    recording: query.cylinder ? (s) => s.legibility !== undefined && s.legibility.score >= lo && s.legibility.score <= hi : TRUE,
     unmapped: query.unmapped ? (s) => s.location.lat === null || s.location.lng === null : TRUE,
     journey: query.trip && tripSongIds ? (s) => tripSongIds.has(s.id) : TRUE,
   }
@@ -359,6 +366,13 @@ export function buildChips(query: Query, index: CatalogIndex): Chip[] {
           : `to ${query.yearTo}`
     chips.push({ key: 'year', value: 'year', label })
   }
+  if (query.cylinder) {
+    const range = query.legibFrom !== undefined || query.legibTo !== undefined
+    const label = range
+      ? t('facet.cylinderChipRange', { from: (query.legibFrom ?? 0).toFixed(2), to: (query.legibTo ?? 1).toFixed(2) })
+      : t('facet.cylinderChip')
+    chips.push({ key: 'recording', value: 'cylinder', label })
+  }
   if (query.q.trim()) chips.push({ key: 'q', value: query.q.trim(), label: `"${query.q.trim()}"` })
   if (query.unmapped) chips.push({ key: 'unmapped', value: '1', label: t('facet.notMapped') })
   if (query.trip) chips.push({ key: 'journey', value: query.trip, label: query.trip })
@@ -399,6 +413,7 @@ export function derive(input: DeriveInput): Derived {
   const collector: Counts = new Map([...index.collectors.map((c): [string, number] => [c, 0]), [UNKNOWN_COLLECTOR, 0]])
   const exceptPlace: Song[] = []
   const exceptYear: Song[] = []
+  const exceptRecording: Song[] = []
   const filtered: Song[] = []
   const keys = FACET_KEYS.filter((k) => predicates[k] !== TRUE)
   for (const s of songs) {
@@ -415,6 +430,7 @@ export function derive(input: DeriveInput): Derived {
       filtered.push(s)
       exceptPlace.push(s)
       exceptYear.push(s)
+      exceptRecording.push(s)
       countFacet(s, 'genre', genre, style, performance, instrument, collector)
       countFacet(s, 'style', genre, style, performance, instrument, collector)
       countFacet(s, 'performance', genre, style, performance, instrument, collector)
@@ -423,6 +439,7 @@ export function derive(input: DeriveInput): Derived {
     } else if (fails === 1 && failing) {
       if (failing === 'place') exceptPlace.push(s)
       else if (failing === 'year') exceptYear.push(s)
+      else if (failing === 'recording') exceptRecording.push(s)
       else if (failing === 'genre' || failing === 'style' || failing === 'performance' || failing === 'instrument' || failing === 'collector')
         countFacet(s, failing, genre, style, performance, instrument, collector)
     }
@@ -448,6 +465,8 @@ export function derive(input: DeriveInput): Derived {
     pageCount,
     facetCounts: { genre, style, performance, instrument, collector },
     yearHistogram: histogram(exceptYear, index.yearMin, index.yearMax),
+    cylinderCount: exceptRecording.reduce((n, s) => n + (s.legibility ? 1 : 0), 0),
+    legibHistogram: legibilityHistogram(exceptRecording),
     placeTree: buildPlaceTree(index, exceptPlace, query.country),
     mapLevel: level,
     mapPoints: points,
@@ -485,6 +504,16 @@ function countFacet(
       else inc(collector, UNKNOWN_COLLECTOR)
       break
   }
+}
+
+/** Legibility in 20 bins of 0.05; a score of exactly 1 falls in the last bin. */
+export function legibilityHistogram(songs: Song[]): Bin[] {
+  const bins: Bin[] = Array.from({ length: 20 }, (_, i) => ({ from: i * 5, to: i === 19 ? 100 : i * 5 + 4, count: 0 }))
+  for (const s of songs) {
+    if (!s.legibility) continue
+    bins[Math.min(19, Math.floor(Math.round(s.legibility.score * 100) / 5))].count++
+  }
+  return bins
 }
 
 export function histogram(songs: Song[], min: number | undefined, max: number | undefined): Bin[] {

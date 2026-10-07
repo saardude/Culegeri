@@ -3,6 +3,7 @@
 import { useCallback, useRef, useState, type KeyboardEvent } from 'react'
 import { Link } from 'react-router'
 import type { CatalogIndex } from '../data/catalogIndex'
+import { formatLegibility, legibilityBand } from '../data/legibility'
 import { t } from '../i18n/en'
 import { placeText } from '../state/placeName'
 import type { Song } from '../types/song'
@@ -83,6 +84,7 @@ export function SongRow({
         </span>
       </Link>
       <div className="song-row__side">
+        {song.legibility && <LegibilityMeter score={song.legibility.score} />}
         <SourceLink song={song} size="row" />
         <span className="song-row__icons">
           {song.media.audio.length > 0 && (
@@ -173,5 +175,24 @@ export function SongList({
         />
       ))}
     </ol>
+  )
+}
+
+/** Five-step meter and the score, for records with a wax-cylinder recording. */
+export function LegibilityMeter({ score }: { score: number }) {
+  const label = t('results.legibility', { score: formatLegibility(score), band: t(`legibility.band.${legibilityBand(score)}`) })
+  const on = Math.max(1, Math.ceil(score * 5 - 1e-9))
+  return (
+    <span className="legib-meter" title={label}>
+      <span className="legib-meter__bars" aria-hidden="true">
+        {[1, 2, 3, 4, 5].map((i) => (
+          <i key={i} className={i <= on ? 'is-on' : undefined} />
+        ))}
+      </span>
+      <span className="legib-meter__score mono" aria-hidden="true">
+        {formatLegibility(score)}
+      </span>
+      <span className="visually-hidden">{label}</span>
+    </span>
   )
 }

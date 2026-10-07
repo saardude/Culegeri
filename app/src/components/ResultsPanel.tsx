@@ -17,8 +17,17 @@ export function SortSelect() {
       <label htmlFor="sort-select" className="visually-hidden">
         {t('sort.label')}
       </label>
-      <select id="sort-select" className="select" value={query.sort} onChange={(e) => setQuery({ sort: e.target.value as SortKey })}>
-        {SORT_KEYS.map((k) => (
+      <select
+        id="sort-select"
+        className="select"
+        value={query.sort}
+        onChange={(e) => {
+          const sort = e.target.value as SortKey
+          // clearest first is the useful order for legibility
+          setQuery(sort === 'legibility' && query.sort !== 'legibility' ? { sort, dir: 'desc' } : { sort })
+        }}
+      >
+        {SORT_KEYS.filter((k) => k !== 'legibility' || query.cylinder).map((k) => (
           <option key={k} value={k}>
             {t(`sort.${k}`)}
           </option>

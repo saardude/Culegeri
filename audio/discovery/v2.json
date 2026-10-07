@@ -1,0 +1,442 @@
+{
+ "MH_4407a": {
+  "legib": 0.668,
+  "clarity": 0.622,
+  "noise": 0.738,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.82,
+   "richness": 0.38,
+   "hnr": 0.9,
+   "rhythm": 0.38,
+   "words": 0.54
+  },
+  "noise_parts": {
+   "snr": 0.68,
+   "hiss": 1.0,
+   "clicks": 0.68,
+   "bandwidth": 0.68,
+   "background": 0.66
+  },
+  "heard": "Édes, a nyám látszik, vajon mi látszik, Három rejpárszukok, nem úgy szép menjünk. Tavajszak, tényleg srác, búkóra tetszik srác, Túsznak, hár, macnak srác, nem ú",
+  "first_line": "Édesanyám, lelkem"
+ },
+ "MH_1381b": {
+  "legib": 0.56,
+  "clarity": 0.608,
+  "noise": 0.487,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.54,
+   "richness": 0.78,
+   "hnr": 0.5,
+   "rhythm": 0.95,
+   "words": 0.55
+  },
+  "noise_parts": {
+   "snr": 0.06,
+   "hiss": 0.63,
+   "clicks": 0.88,
+   "bandwidth": 1.0,
+   "background": 0.1
+  },
+  "heard": "Toia cum o dati lor, oi cu tiei timp lor, Lău-mi dati, cât-a țipe-n curat, Datorat-o dati cât-a, cât-a țapolat-mi-o dati, Căt-a țapolat-mi-o dati, cât-a țapolat",
+  "first_line": "Noi acum ortacilor"
+ },
+ "MH_0432e": {
+  "legib": 0.527,
+  "clarity": 0.438,
+  "noise": 0.66,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.6,
+   "richness": 0.14,
+   "hnr": 0.88,
+   "rhythm": 0.41,
+   "words": 0.35
+  },
+  "noise_parts": {
+   "snr": 0.57,
+   "hiss": 1.0,
+   "clicks": 0.49,
+   "bandwidth": 0.36,
+   "background": 0.82
+  },
+  "heard": "",
+  "first_line": "Aj, haj, édes kárujkám, kárujkám"
+ },
+ "MH_3121b": {
+  "legib": 0.473,
+  "clarity": 0.361,
+  "noise": 0.642,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.45,
+   "richness": 0.36,
+   "hnr": 0.61,
+   "rhythm": 0.36,
+   "words": 0.22
+  },
+  "noise_parts": {
+   "snr": 0.35,
+   "hiss": 0.93,
+   "clicks": 0.85,
+   "bandwidth": 0.75,
+   "background": 0.44
+  },
+  "heard": "",
+  "first_line": "Szomoran szól a nagyharang"
+ },
+ "MH_1015d": {
+  "legib": 0.508,
+  "clarity": 0.434,
+  "noise": 0.619,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.84,
+   "richness": 0.24,
+   "hnr": 0.65,
+   "rhythm": 0.23,
+   "words": 0.16
+  },
+  "noise_parts": {
+   "snr": 0.42,
+   "hiss": 0.93,
+   "clicks": 0.8,
+   "bandwidth": 1.0,
+   "background": 0.09
+  },
+  "heard": "",
+  "first_line": "Kocsmárosné, főzzön halat ebédre"
+ },
+ "MH_0469a": {
+  "legib": 0.476,
+  "clarity": 0.4,
+  "noise": 0.589,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.61,
+   "richness": 0.0,
+   "hnr": 0.91,
+   "rhythm": 0.31,
+   "words": 0.32
+  },
+  "noise_parts": {
+   "snr": 0.41,
+   "hiss": 1.0,
+   "clicks": 0.97,
+   "bandwidth": 0.19,
+   "background": 0.32
+  },
+  "heard": "Csájort elpújtál, hú, most pánkot nyilvó. Csájort elpújtál, hú, most pánkot nyilvó. Csájort elpújtál, hú, most pánkot nyilvó.",
+  "first_line": "Fújd el, jó szél, fújd el"
+ },
+ "MH_2380c": {
+  "legib": 0.514,
+  "clarity": 0.417,
+  "noise": 0.659,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.3,
+   "richness": 0.38,
+   "hnr": 0.49,
+   "rhythm": 0.53,
+   "words": 0.5
+  },
+  "noise_parts": {
+   "snr": 0.39,
+   "hiss": 0.79,
+   "clicks": 0.94,
+   "bandwidth": 1.0,
+   "background": 0.32
+  },
+  "heard": "Olykandermók, kandermók, borlók és lanchi évoly, nem vagyok én, egyáltás, dopács, leszbobás, nem vagyok én, egyáltás, dopács, leszbobás.",
+  "first_line": "Haj, kendermag, kendermag"
+ },
+ "MH_0816b": {
+  "legib": 0.451,
+  "clarity": 0.325,
+  "noise": 0.64,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.31,
+   "richness": 0.34,
+   "hnr": 0.59,
+   "rhythm": 0.39,
+   "words": 0.25
+  },
+  "noise_parts": {
+   "snr": 0.33,
+   "hiss": 0.91,
+   "clicks": 0.91,
+   "bandwidth": 0.66,
+   "background": 0.46
+  },
+  "heard": "",
+  "first_line": "Járjad pap a táncot"
+ },
+ "MH_2463b": {
+  "legib": 0.459,
+  "clarity": 0.427,
+  "noise": 0.508,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.4,
+   "richness": 0.49,
+   "hnr": 0.4,
+   "rhythm": 0.12,
+   "words": 0.47
+  },
+  "noise_parts": {
+   "snr": 0.21,
+   "hiss": 0.78,
+   "clicks": 0.64,
+   "bandwidth": 0.89,
+   "background": 0.19
+  },
+  "heard": "Rönged-e az oldal Verre gondolva? Rönged-e az oldal Verre gondolva? Szóvén ír ide meg, meg nem allan elvállt.",
+  "first_line": "Lengedez a nádszál"
+ },
+ "MH_0122d": {
+  "legib": 0.557,
+  "clarity": 0.575,
+  "noise": 0.53,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.87,
+   "richness": 0.73,
+   "hnr": 0.67,
+   "rhythm": 0.4,
+   "words": 0.23
+  },
+  "noise_parts": {
+   "snr": 0.12,
+   "hiss": 0.91,
+   "clicks": 0.97,
+   "bandwidth": 0.76,
+   "background": 0.06
+  },
+  "heard": "Téped a nyokos állszélítva. Téped a nyokos állszélítva. Azt! Azt! Azt! Azt! Azt!",
+  "first_line": "Szépen ragyog az esteli csillag"
+ },
+ "MH_1305c": {
+  "legib": 0.624,
+  "clarity": 0.595,
+  "noise": 0.669,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.87,
+   "richness": 0.22,
+   "hnr": 0.64,
+   "rhythm": 0.94,
+   "words": 0.51
+  },
+  "noise_parts": {
+   "snr": 0.46,
+   "hiss": 1.0,
+   "clicks": 0.96,
+   "bandwidth": 0.41,
+   "background": 0.5
+  },
+  "heard": "Ilyen a pintét jön a zumbot, baszár. Csér, Csérgetnágy, baszár, vízreány. Csér, Csérvidó, vagy utvaró, pisztárzó. Ilyen a babára kúsz a sítvály. Csér, Csérvidó,",
+  "first_line": "Jön a péntek, jön a szombat, vasárnap"
+ },
+ "MH_1304d": {
+  "legib": 0.445,
+  "clarity": 0.391,
+  "noise": 0.525,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.6,
+   "richness": 0.67,
+   "hnr": 0.27,
+   "rhythm": 0.11,
+   "words": 0.13
+  },
+  "noise_parts": {
+   "snr": 0.12,
+   "hiss": 0.72,
+   "clicks": 0.7,
+   "bandwidth": 1.0,
+   "background": 0.31
+  },
+  "heard": "",
+  "first_line": "Cipellőszájó kevil menyasszony"
+ },
+ "MH_1520a": {
+  "legib": 0.469,
+  "clarity": 0.418,
+  "noise": 0.547,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.79,
+   "richness": 0.0,
+   "hnr": 0.72,
+   "rhythm": 0.11,
+   "words": 0.3
+  },
+  "noise_parts": {
+   "snr": 0.22,
+   "hiss": 1.0,
+   "clicks": 0.9,
+   "bandwidth": 0.23,
+   "background": 0.38
+  },
+  "heard": "Tígyar gondol be nek, hogy enem arra játsz el, mert felmaradó a kulán,",
+  "first_line": "Vigyél el, rózsám, vigyél magaddal"
+ },
+ "MH_1582a": {
+  "legib": 0.532,
+  "clarity": 0.548,
+  "noise": 0.509,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.97,
+   "richness": 0.42,
+   "hnr": 0.95,
+   "rhythm": 0.22,
+   "words": 0.19
+  },
+  "noise_parts": {
+   "snr": 0.0,
+   "hiss": 0.99,
+   "clicks": 1.0,
+   "bandwidth": 0.42,
+   "background": 0.24
+  },
+  "heard": "Tníttol, felszeni. Nincs a fozba tov. Nincs pár dolog, a túl hétet, a pánkú vágyodoorávára. Tudod, tudod, tudod, tudod, a gyereket, a hárgázat, a gyöntet. Köszö",
+  "first_line": "Isten legyen hozzád édes kedves apám"
+ },
+ "MH_3210b": {
+  "legib": 0.429,
+  "clarity": 0.337,
+  "noise": 0.567,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.36,
+   "richness": 0.34,
+   "hnr": 0.59,
+   "rhythm": 0.91,
+   "words": 0.16
+  },
+  "noise_parts": {
+   "snr": 0.18,
+   "hiss": 0.68,
+   "clicks": 0.88,
+   "bandwidth": 1.0,
+   "background": 0.29
+  },
+  "heard": "",
+  "first_line": "Széles menta, levendula"
+ },
+ "MH_1046b": {
+  "legib": 0.677,
+  "clarity": 0.598,
+  "noise": 0.795,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.85,
+   "richness": 0.44,
+   "hnr": 0.75,
+   "rhythm": 0.64,
+   "words": 0.43
+  },
+  "noise_parts": {
+   "snr": 0.71,
+   "hiss": 0.93,
+   "clicks": 0.95,
+   "bandwidth": 0.54,
+   "background": 0.79
+  },
+  "heard": "",
+  "first_line": null
+ },
+ "MH_1192a": {
+  "legib": 0.512,
+  "clarity": 0.421,
+  "noise": 0.65,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.29,
+   "richness": 0.23,
+   "hnr": 0.73,
+   "rhythm": 1.0,
+   "words": 0.47
+  },
+  "noise_parts": {
+   "snr": 0.51,
+   "hiss": 1.0,
+   "clicks": 0.75,
+   "bandwidth": 0.31,
+   "background": 0.63
+  },
+  "heard": "Három kinészér van a mamá! Matonánok el kell menni magam, őt hagyják a fere!",
+  "first_line": "Három színű szőre van a lovamnak"
+ },
+ "MH_2816b": {
+  "legib": 0.514,
+  "clarity": 0.499,
+  "noise": 0.537,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.18,
+   "richness": 0.77,
+   "hnr": 0.45,
+   "rhythm": 0.32,
+   "words": 0.66
+  },
+  "noise_parts": {
+   "snr": 0.38,
+   "hiss": 0.95,
+   "clicks": 0.21,
+   "bandwidth": 0.63,
+   "background": 0.57
+  },
+  "heard": "Szip a kig, de nem tagadom, Én a kigregyen koradtom, Gyere, a barna szemtyug arra, Semblik ezt ész a gara, Semblik ezt ész a gara, Ahogy egy édes édsz az arra, ",
+  "first_line": "Szép a kék szem, nem tagadom"
+ },
+ "MH_2675a": {
+  "legib": 0.274,
+  "clarity": 0.146,
+  "noise": 0.466,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.14,
+   "richness": 0.37,
+   "hnr": 0.0,
+   "rhythm": 0.04,
+   "words": 0.08
+  },
+  "noise_parts": {
+   "snr": 0.45,
+   "hiss": 0.18,
+   "clicks": 0.97,
+   "bandwidth": 0.76,
+   "background": 0.05
+  },
+  "heard": "A legyen kialáltal, a legyen kialáltal, a legyen kialáltal a legyen kialáltal...",
+  "first_line": "Nincs Felszegbe olyan asszony"
+ },
+ "MH_1100a": {
+  "legib": 0.296,
+  "clarity": 0.176,
+  "noise": 0.477,
+  "vocal": true,
+  "clarity_parts": {
+   "pitch": 0.11,
+   "richness": 0.0,
+   "hnr": 0.19,
+   "rhythm": 0.16,
+   "words": 0.33
+  },
+  "noise_parts": {
+   "snr": 0.03,
+   "hiss": 0.97,
+   "clicks": 0.88,
+   "bandwidth": 0.48,
+   "background": 0.14
+  },
+  "heard": "M.H.Ezr.Eig.Zalas Hengel",
+  "first_line": "Bolthajtásos az én szobám"
+ }
+}

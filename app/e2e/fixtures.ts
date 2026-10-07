@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url'
 import { expect, test as base, type Locator, type Page } from '@playwright/test'
 import { buildIndex } from '../src/data/catalogIndex'
 import { hydrateSongs } from '../src/data/hydrate'
+import { attachLegibility, type LegibilityFile } from '../src/data/legibility'
 import { DEFAULT_QUERY } from '../src/state/query'
 import { buildMapPoints, countryPredicate } from '../src/state/selectors'
 import type { Place } from '../src/types/place'
@@ -49,6 +50,8 @@ function loadData(): DataFixture {
   }
   const places = read<Place[]>('places')
   const songs = hydrateSongs(read<unknown>('songs'), places)
+  // optional, as in the app: wax-cylinder legibility scores
+  if (files.some((x) => x.startsWith('legibility.'))) attachLegibility(songs, read<LegibilityFile>('legibility'))
   const placeById = new Map(places.map((p) => [p.id, p]))
   const ro = songs.filter((s) => (s.location.placeId ? s.location.placeId === 'ro' || s.location.placeId.startsWith('ro/') : s.location.country === 'RO'))
   const scoped = songs.filter(countryPredicate(DEFAULT_QUERY))

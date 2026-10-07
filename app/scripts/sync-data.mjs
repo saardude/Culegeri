@@ -57,6 +57,23 @@ for (const name of [...required, ...optional]) {
   }
   files[name] = { text: JSON.stringify(JSON.parse(readFileSync(p, 'utf8'))), source: `${name}.json` }
 }
+// legibility (wax-cylinder filter), optional: the app copy of data/recording-quality.json keeps
+// what the explorer and the song page read: record score, the track it came from and the clip-only
+// flag; every track's own score; the clip list. Written by audio/run_legibility.py and
+// audio/quality_records.py.
+const qualityPath = join(dataDir, 'recording-quality.json')
+if (existsSync(qualityPath)) {
+  const q = JSON.parse(readFileSync(qualityPath, 'utf8'))
+  const records = {}
+  for (const id of Object.keys(q.records ?? {}).sort()) {
+    const r = q.records[id]
+    records[id] = r.flag === 'clip-only' ? [r.legib, r.track, 1] : [r.legib, r.track]
+  }
+  files.legibility = {
+    text: JSON.stringify({ method: q.method, scoredAt: q.scoredAt, records, tracks: q.tracks ?? {}, clips: q.clips ?? [] }),
+    source: 'recording-quality.json',
+  }
+}
 // geo layers (journey mapper), optional
 const geoDir = join(dataDir, 'geo')
 if (existsSync(geoDir)) {

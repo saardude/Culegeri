@@ -106,6 +106,9 @@ export function comparator(sort: SortKey, dir: SortDir, lookup: PlaceLookup = ()
       }
     case 'year':
       return (a, b) => knownFirst(a.collected.year, b.collected.year, dir, (x, y) => x - y) || title(a, b) || byId(a, b)
+    case 'legibility':
+      // Unscored records (no wax cylinder) last in both directions; the filter normally hides them.
+      return (a, b) => knownFirst(a.legibility?.score, b.legibility?.score, dir, (x, y) => x - y) || title(a, b) || byId(a, b)
     case 'source':
       return (a, b) => {
         const sa = SITE_ORDER[a.source.site] ?? 99

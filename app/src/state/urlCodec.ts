@@ -41,6 +41,8 @@ const PARAM_ORDER = [
   'collector',
   'from',
   'to',
+  'rec',
+  'legib',
   'sort',
   'dir',
   'page',
@@ -83,6 +85,8 @@ export function encodeQuery(q: Query, bordersDefault?: string): string {
   if (q.collector.length) put('collector', q.collector.map(enc).join(','))
   if (q.yearFrom !== undefined) put('from', String(q.yearFrom))
   if (q.yearTo !== undefined) put('to', String(q.yearTo))
+  if (q.cylinder) put('rec', 'cylinder')
+  if (q.legibFrom !== undefined || q.legibTo !== undefined) put('legib', `${legibText(q.legibFrom ?? 0)}-${legibText(q.legibTo ?? 1)}`)
   if (q.sort !== 'title') put('sort', q.sort)
   if (q.dir !== 'asc') put('dir', q.dir)
   if (q.page > 1) put('page', String(q.page))
@@ -92,6 +96,11 @@ export function encodeQuery(q: Query, bordersDefault?: string): string {
   if (q.date) put('date', enc(q.date))
   if (q.borders && q.borders !== (bordersDefault ?? (q.trip || q.date ? undefined : 'now'))) put('borders', q.borders)
   return parts.join('&')
+}
+
+/** Shortest decimal for a hundredths value: 0.4, 0.45, 1. */
+function legibText(v: number): string {
+  return String(Math.round(v * 100) / 100)
 }
 
 /** Split a raw search string into [key, rawValue] pairs without decoding the values. */
@@ -215,6 +224,23 @@ export function decodeQuery(search: string, opts: DecodeOptions = {}): DecodeRes
   if (from !== undefined) patch.yearFrom = from
   const to = int('to')
   if (to !== undefined) patch.yearTo = to
+
+  const rec = single('rec')
+  if (rec !== undefined) {
+    if (rec === 'cylinder') patch.cylinder = true
+    else warnings.push(`unknown rec "${rec}" dropped`)
+  }
+  const legib = single('legib')
+  if (legib !== undefined) {
+    const m = /^(\d*\.?\d+)?-(\d*\.?\d+)?$/.exec(legib.trim())
+    const lo = m?.[1] !== undefined ? Number(m[1]) : undefined
+    const hi = m?.[2] !== undefined ? Number(m[2]) : undefined
+    if (!m || (lo !== undefined && lo > 1) || (hi !== undefined && hi > 1)) warnings.push(`malformed legib "${legib}" ignored`)
+    else {
+      if (lo !== undefined) patch.legibFrom = lo
+      if (hi !== undefined) patch.legibTo = hi
+    }
+  }
 
   const sort = single('sort')
   if (sort !== undefined) {

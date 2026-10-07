@@ -1,4 +1,4 @@
-// FilterRail (FRONTEND-SPEC 7): place tree, genre, style, performance, instrument, year, Clear all.
+// FilterRail (FRONTEND-SPEC 7): place tree, collector, recording, genre, style, performance, instrument, year, Clear all.
 // Also used inside the FilterSheet under 1024 px. All controls are disabled while loading (AC-31).
 import { useEffect, useRef, type ReactNode } from 'react'
 import { useCatalogReady } from '../../app/catalog'
@@ -10,6 +10,7 @@ import { CollectorFacet } from './CollectorFacet'
 import { ChipFacet } from './ChipFacet'
 import { FacetGroup } from './FacetGroup'
 import { PlaceTree } from './PlaceTree'
+import { RecordingFacet } from './RecordingFacet'
 import { YearRange } from './YearRange'
 
 export function FilterRailContent() {
@@ -31,12 +32,26 @@ export function FilterRailContent() {
   }
   const { index } = catalog
   const yearActive = (query.yearFrom !== undefined ? 1 : 0) + (query.yearTo !== undefined ? 1 : 0)
+  const recordingActive = query.cylinder ? 1 : 0
   return (
     <>
       <PlaceFacet />
       <FacetGroup id="collector" title={t('facet.collector')} activeCount={query.collector.length} onClear={() => setQuery({ collector: [] })}>
         <CollectorFacet values={index.collectors} counts={derived.facetCounts.collector} selected={query.collector} onChange={(collector) => setQuery({ collector })} />
       </FacetGroup>
+      {catalog.cylinderCount > 0 && (
+        <FacetGroup id="recording" title={t('facet.recording')} activeCount={recordingActive} onClear={() => setQuery({ cylinder: undefined })}>
+          <RecordingFacet
+            cylinder={Boolean(query.cylinder)}
+            from={query.legibFrom}
+            to={query.legibTo}
+            count={derived.cylinderCount}
+            histogram={derived.legibHistogram}
+            onCylinder={(on) => setQuery({ cylinder: on || undefined })}
+            onRange={({ from, to }) => setQuery({ legibFrom: from, legibTo: to })}
+          />
+        </FacetGroup>
+      )}
       <FacetGroup id="genre" title={t('facet.genre')} activeCount={query.genre.length} onClear={() => setQuery({ genre: [] })}>
         <CheckboxFacet counts={derived.facetCounts.genre} selected={query.genre} onChange={(genre) => setQuery({ genre: genre as GenreId[] })} />
       </FacetGroup>

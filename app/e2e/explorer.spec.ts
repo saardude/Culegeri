@@ -169,4 +169,41 @@ test.describe('Explorer', () => {
     await page.keyboard.press('Enter')
     await expect.poll(() => query(page).get('county')).not.toBeNull()
   })
+
+  test('E2E-14 wax-cylinder filter: only cylinders, legibility range, legibility sort, chip removal', async ({ page, data }, testInfo) => {
+    test.skip(testInfo.project.name === 'phone-chromium', 'desktop filter rail')
+    const cylinders = data.songs.filter((s) => s.legibility)
+    test.skip(cylinders.length === 0, 'this build has no legibility data')
+    await gotoApp(page, '/')
+
+    // a controlled checkbox: it turns checked once the URL (the state) has changed, so click and wait
+    const only = page.getByLabel('Wax cylinder recordings only')
+    await only.click()
+    await expect.poll(() => query(page).get('rec')).toBe('cylinder')
+    await expect(only).toBeChecked()
+    expect((await readCount(page)).n).toBe(cylinders.length)
+
+    // eight 0.05 steps on the lower slider: legibility 0.40 to 1.00
+    const from = page.locator('#legib-from-slider')
+    await from.focus()
+    for (let i = 0; i < 8; i++) await from.press('ArrowRight')
+    await expect.poll(() => query(page).get('legib')).toBe('0.4-1')
+    await expect.poll(async () => (await readCount(page)).n).toBe(cylinders.filter((s) => (s.legibility?.score ?? 0) >= 0.4).length)
+    await expect(page.getByRole('button', { name: /Remove filter: Wax cylinder, legibility 0\.40 to 1\.00/ })).toBeVisible()
+
+    // the legibility sort is offered only with the cylinder filter, and starts clearest first
+    await page.getByLabel('Sort by').selectOption('legibility')
+    await expect.poll(() => query(page).get('dir')).toBe('desc')
+    const best = Math.max(...cylinders.map((s) => s.legibility?.score ?? 0))
+    const firstId = await page.locator('.song-row').first().getAttribute('data-song-id')
+    expect(data.songs.find((s) => s.id === firstId)?.legibility?.score).toBe(best)
+    await expect(page.locator('.song-row').first().locator('.legib-meter')).toBeVisible()
+
+    // removing the chip clears the range and the legibility sort
+    await page.getByRole('button', { name: /Remove filter: Wax cylinder/ }).click()
+    await expect.poll(() => page.url()).not.toContain('rec=')
+    expect(query(page).get('legib')).toBeNull()
+    expect(query(page).get('sort')).toBeNull()
+    await expect(page.getByLabel('Sort by').locator('option[value="legibility"]')).toHaveCount(0)
+  })
 })

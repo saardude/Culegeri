@@ -1,0 +1,44 @@
+{
+ "original": {
+  "dnsmos": 0.315,
+  "nisqa": 0.0,
+  "squim": 0.587,
+  "whisper": 0.105,
+  "librosa": 0.78
+ },
+ "wear 1": {
+  "dnsmos": 0.251,
+  "nisqa": 0.013,
+  "squim": 0.512,
+  "whisper": 0.071,
+  "librosa": 0.714
+ },
+ "wear 2": {
+  "dnsmos": 0.135,
+  "nisqa": 0.073,
+  "squim": 0.531,
+  "whisper": 0.0,
+  "librosa": 0.532
+ },
+ "wear 3": {
+  "dnsmos": 0.096,
+  "nisqa": 0.006,
+  "squim": 0.511,
+  "whisper": 0.0,
+  "librosa": 0.336
+ },
+ "wear 4": {
+  "dnsmos": 0.04,
+  "nisqa": 0.0,
+  "squim": 0.498,
+  "whisper": 0.0,
+  "librosa": 0.259
+ },
+ "wear 5": {
+  "dnsmos": 0.026,
+  "nisqa": 0.0,
+  "squim": 0.451,
+  "whisper": 0.0,
+  "librosa": 0.126
+ }
+}

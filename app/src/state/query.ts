@@ -4,7 +4,7 @@ import { roBase } from './normalize'
 
 export type GenreId = NonNullable<Song['genre']>
 export type Performance = Song['performance']
-export type SortKey = 'title' | 'style' | 'location' | 'year' | 'source'
+export type SortKey = 'title' | 'style' | 'location' | 'year' | 'source' | 'legibility'
 export type SortDir = 'asc' | 'desc'
 export type BordersMode = '1910' | '1914' | '1920' | 'now' | 'both'
 
@@ -21,6 +21,11 @@ export interface Query {
   collector: string[]        // normalised names; `none` selects records with no collector
   yearFrom?: number
   yearTo?: number
+  /** Only records with a wax-cylinder recording (they are the records with a legibility score). */
+  cylinder?: boolean
+  /** Legibility range, 0 to 1 in hundredths; either bound implies `cylinder`. */
+  legibFrom?: number
+  legibTo?: number
   sort: SortKey
   dir: SortDir
   page: number
@@ -50,7 +55,7 @@ export const PAGE_SIZE = 50
 export const GENRE_ORDER: GenreId[] = ['bocet', 'colinda', 'doina', 'joc', 'nunta', 'cantec', 'other']
 export const GENRE_IDS = new Set<string>(GENRE_ORDER)
 export const PERFORMANCE_IDS: Performance[] = ['vocal', 'instrumental', 'mixed', 'unknown']
-export const SORT_KEYS: SortKey[] = ['title', 'style', 'location', 'year', 'source']
+export const SORT_KEYS: SortKey[] = ['title', 'style', 'location', 'year', 'source', 'legibility']
 export const BORDER_MODES: BordersMode[] = ['1910', '1914', '1920', 'now', 'both']
 
 export type PlaceLevel = 'country' | 'region' | 'county' | 'village'
@@ -151,6 +156,15 @@ export function applyPatch(base: Query, patch: Partial<Query>): Query {
       case 'yearTo':
         next.yearTo = intOrUndefined(patch.yearTo)
         break
+      case 'cylinder':
+        next.cylinder = patch.cylinder ? true : undefined
+        break
+      case 'legibFrom':
+        next.legibFrom = legibOrUndefined(patch.legibFrom, 'from')
+        break
+      case 'legibTo':
+        next.legibTo = legibOrUndefined(patch.legibTo, 'to')
+        break
       case 'sort':
         next.sort = patch.sort && isSortKey(patch.sort) ? patch.sort : 'title'
         break
@@ -187,6 +201,19 @@ export function applyPatch(base: Query, patch: Partial<Query>): Query {
     next.yearFrom = next.yearTo
     next.yearTo = t
   }
+  if (next.legibFrom !== undefined && next.legibTo !== undefined && next.legibFrom > next.legibTo) {
+    const t = next.legibFrom
+    next.legibFrom = next.legibTo
+    next.legibTo = t
+  }
+  // Only cylinder records have a score: clearing the cylinder filter clears the range, a range turns it on,
+  // and the legibility sort needs it.
+  if ('cylinder' in patch && !next.cylinder) next.legibFrom = next.legibTo = undefined
+  if (next.legibFrom !== undefined || next.legibTo !== undefined) next.cylinder = true
+  if (next.sort === 'legibility' && !next.cylinder) {
+    next.sort = 'title'
+    next.dir = 'asc' // legibility is sorted clearest first; titles go back to A-Z
+  }
   if (next.country === 'all') next.country = undefined
   if (keys.some((k) => !PAGE_NEUTRAL.has(k))) next.page = 1
   return dropUndefined(next)
@@ -220,6 +247,15 @@ function setPlace(q: Query, level: PlaceLevel, id: string | undefined): void {
   q.region = level === 'region' ? id : anc[1]
   q.county = level === 'county' ? id : level === 'village' ? anc[2] : undefined
   if (level === 'region') q.county = undefined
+}
+
+/** Hundredths in [0, 1]; the open end of the scale (0 for from, 1 for to) means "no bound". */
+function legibOrUndefined(v: number | undefined, end: 'from' | 'to'): number | undefined {
+  if (typeof v !== 'number' || !Number.isFinite(v)) return undefined
+  const x = Math.round(Math.min(1, Math.max(0, v)) * 100) / 100
+  if (end === 'from' && x <= 0) return undefined
+  if (end === 'to' && x >= 1) return undefined
+  return x
 }
 
 function intOrUndefined(v: number | undefined): number | undefined {
@@ -258,6 +294,7 @@ export function hasActiveFilters(q: Query): boolean {
       q.collector.length ||
       q.yearFrom !== undefined ||
       q.yearTo !== undefined ||
+      q.cylinder ||
       q.unmapped ||
       q.trip ||
       q.date,

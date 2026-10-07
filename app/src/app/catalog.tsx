@@ -3,6 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { buildIndex, type CatalogIndex } from '../data/catalogIndex'
 import { hydrateSongs } from '../data/hydrate'
+import { attachLegibility, type LegibilityFile } from '../data/legibility'
 import type { SearchService } from '../data/search'
 import { createSearchService } from '../data/searchClient'
 import { manifest } from './manifest'
@@ -29,6 +30,8 @@ export interface CatalogReady {
   journeys: JourneySummary[]
   /** Records located in present-day Romania (place id under `ro`, or country RO when unresolved). */
   romaniaCount: number
+  /** Records with a scored wax-cylinder recording (`song.legibility` set). */
+  cylinderCount: number
 }
 
 export type CatalogState = { status: 'loading' } | { status: 'error'; error: Error } | CatalogReady
@@ -48,13 +51,16 @@ async function fetchJson<T>(url: string | undefined, name: string): Promise<T> {
 }
 
 async function loadCatalog(): Promise<Omit<CatalogReady, 'status' | 'search'>> {
-  const [rawSongs, places, facets, journeysFile] = await Promise.all([
+  const [rawSongs, places, facets, journeysFile, legibilityFile] = await Promise.all([
     fetchJson<unknown>(manifest.songs, 'songs'),
     fetchJson<Place[]>(manifest.places, 'places'),
     fetchJson<Facets>(manifest.facets, 'facets'),
     manifest.journeys ? fetchJson<{ journeys?: JourneySummary[] } | JourneySummary[]>(manifest.journeys, 'journeys').catch(() => null) : Promise.resolve(null),
+    // optional: without it the explorer simply has no cylinder filter
+    manifest.legibility ? fetchJson<LegibilityFile>(manifest.legibility, 'legibility').catch(() => null) : Promise.resolve(null),
   ])
   const songs = hydrateSongs(rawSongs, places)
+  const cylinderCount = attachLegibility(songs, legibilityFile)
   const index = buildIndex(songs, places)
   const journeys = Array.isArray(journeysFile) ? journeysFile : (journeysFile?.journeys ?? [])
   let romaniaCount = 0
@@ -62,7 +68,7 @@ async function loadCatalog(): Promise<Omit<CatalogReady, 'status' | 'search'>> {
     const id = s.location.placeId
     if (id ? id === 'ro' || id.startsWith('ro/') : s.location.country === 'RO') romaniaCount++
   }
-  return { songs, places, facets, index, journeys, romaniaCount }
+  return { songs, places, facets, index, journeys, romaniaCount, cylinderCount }
 }
 
 export function CatalogProvider({ children }: { children: ReactNode }) {

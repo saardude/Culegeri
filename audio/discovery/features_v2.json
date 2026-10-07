@@ -1,0 +1,482 @@
+{
+ "MH_4407a": {
+  "pitch": 0.7943487763404846,
+  "richness": -5.5189313888549805,
+  "first_line": "Édesanyám, lelkem",
+  "vocal_share": 0.9857758234419987,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 6.7013044002806055e-09,
+   "bass": 4.47721717478089e-08,
+   "other": 0.0001750156661728397,
+   "vocals": 0.012132185511291027
+  },
+  "hnr": 22.59714121802335,
+  "presence": -4.683122158050537,
+  "rhythm": 5.001514434814453,
+  "phoneme": {
+   "conf": 0.5077919960021973,
+   "rate": 0.07774607837200165
+  },
+  "incipit": {
+   "match": 0.7586206896551724,
+   "text": "Édes, a nyám látszik, vajon mi látszik, Három rejpárszukok, nem úgy szép menjünk. Tavajszak, tényleg srác, búkóra tetszik srác, Túsznak, hár, macnak srác, nem ú"
+  }
+ },
+ "MH_1381b": {
+  "pitch": 0.6218255162239075,
+  "richness": 4.477309703826904,
+  "first_line": "Noi acum ortacilor",
+  "vocal_share": 0.9997794778143604,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 0.0006216590409167111,
+   "bass": 2.8139686492067995e-07,
+   "other": 2.665061913376121e-07,
+   "vocals": 0.00248402776196599
+  },
+  "hnr": 12.484737852804482,
+  "presence": 8.484861373901367,
+  "rhythm": 9.623143196105957,
+  "phoneme": {
+   "conf": 0.4388922154903412,
+   "rate": 0.08005336672067642
+  },
+  "incipit": {
+   "match": 0.7222222222222221,
+   "text": "Toia cum o dati lor, oi cu tiei timp lor, Lău-mi dati, cât-a țipe-n curat, Datorat-o dati cât-a, cât-a țapolat-mi-o dati, Căt-a țapolat-mi-o dati, cât-a țapolat"
+  }
+ },
+ "MH_0432e": {
+  "pitch": 0.6619355082511902,
+  "richness": -11.587860107421875,
+  "first_line": "Aj, haj, édes kárujkám, kárujkám",
+  "vocal_share": 0.9974591951758509,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 7.089396625303834e-09,
+   "bass": 2.9269182633129276e-08,
+   "other": 5.1949031330877915e-05,
+   "vocals": 0.020405437797307968
+  },
+  "hnr": 21.948892267843295,
+  "presence": -11.272899627685547,
+  "rhythm": 5.260128021240234,
+  "phoneme": {
+   "conf": 0.5663837194442749,
+   "rate": 0.12529927492141724
+  },
+  "incipit": {
+   "match": 0.0,
+   "text": ""
+  }
+ },
+ "MH_3121b": {
+  "pitch": 0.5684302449226379,
+  "richness": -6.038637161254883,
+  "first_line": "Szomoran szól a nagyharang",
+  "vocal_share": 0.998394110404739,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 7.6684846135322e-05,
+   "bass": 1.5396864228023333e-07,
+   "other": 1.243862061528489e-05,
+   "vocals": 0.007828911766409874
+  },
+  "hnr": 15.207687894524705,
+  "presence": -3.3205807209014893,
+  "rhythm": 4.905651092529297,
+  "phoneme": {
+   "conf": 0.43686795234680176,
+   "rate": 0.07605069875717163
+  },
+  "incipit": {
+   "match": 0.0,
+   "text": ""
+  }
+ },
+ "MH_1015d": {
+  "pitch": 0.8066128492355347,
+  "richness": -9.062304496765137,
+  "first_line": "Kocsmárosné, főzzön halat ebédre",
+  "vocal_share": 0.997917720945425,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 0.0002214457344962284,
+   "bass": 1.330057841641974e-07,
+   "other": 1.6329222489730455e-05,
+   "vocals": 0.007889408618211746
+  },
+  "hnr": 16.242072386383015,
+  "presence": -7.854556083679199,
+  "rhythm": 3.868898391723633,
+  "phoneme": {
+   "conf": 0.40267127752304077,
+   "rate": 0.06311475485563278
+  },
+  "incipit": {
+   "match": 0.0,
+   "text": ""
+  }
+ },
+ "MH_0469a": {
+  "pitch": 0.6630995869636536,
+  "richness": -19.00072479248047,
+  "first_line": "Fújd el, jó szél, fújd el",
+  "vocal_share": 0.9709636707271169,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 7.4109380854281426e-09,
+   "bass": 9.047609239587473e-08,
+   "other": 0.0005253232084214687,
+   "vocals": 0.017569631338119507
+  },
+  "hnr": 22.80937093201192,
+  "presence": -16.362485885620117,
+  "rhythm": 4.49758243560791,
+  "phoneme": {
+   "conf": 0.5620782375335693,
+   "rate": 0.05403602495789528
+  },
+  "incipit": {
+   "match": 0.43478260869565216,
+   "text": "Csájort elpújtál, hú, most pánkot nyilvó. Csájort elpújtál, hú, most pánkot nyilvó. Csájort elpújtál, hú, most pánkot nyilvó."
+  }
+ },
+ "MH_2380c": {
+  "pitch": 0.4801149368286133,
+  "richness": -5.382017612457275,
+  "first_line": "Haj, kendermag, kendermag",
+  "vocal_share": 0.9728211760620588,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 7.438570901285857e-05,
+   "bass": 1.0277511819367646e-07,
+   "other": 0.00015786386211402714,
+   "vocals": 0.0056541552767157555
+  },
+  "hnr": 12.254689123582038,
+  "presence": -5.525600910186768,
+  "rhythm": 6.219966888427734,
+  "phoneme": {
+   "conf": 0.4773426651954651,
+   "rate": 0.0719178095459938
+  },
+  "incipit": {
+   "match": 0.6046511627906976,
+   "text": "Olykandermók, kandermók, borlók és lanchi évoly, nem vagyok én, egyáltás, dopács, leszbobás, nem vagyok én, egyáltás, dopács, leszbobás."
+  }
+ },
+ "MH_0816b": {
+  "pitch": 0.4849238097667694,
+  "richness": -6.610944747924805,
+  "first_line": "Járjad pap a táncot",
+  "vocal_share": 0.9971366680276764,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 9.578104072716087e-05,
+   "bass": 1.1336080518731251e-07,
+   "other": 1.650081503612455e-05,
+   "vocals": 0.005785778630524874
+  },
+  "hnr": 14.658364153383042,
+  "presence": -5.49854850769043,
+  "rhythm": 5.143823623657227,
+  "phoneme": {
+   "conf": 0.45687463879585266,
+   "rate": 0.0747164785861969
+  },
+  "incipit": {
+   "match": 0.0,
+   "text": ""
+  }
+ },
+ "MH_2463b": {
+  "pitch": 0.5393114686012268,
+  "richness": -2.774272918701172,
+  "first_line": "Lengedez a nádszál",
+  "vocal_share": 0.99218056836347,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 4.8627430260239635e-06,
+   "bass": 4.61903404413988e-08,
+   "other": 4.9626494728727266e-05,
+   "vocals": 0.00630279490724206
+  },
+  "hnr": 9.922378786679696,
+  "presence": -0.42383894324302673,
+  "rhythm": 2.9426143169403076,
+  "phoneme": {
+   "conf": 0.4809339940547943,
+   "rate": 0.04803202301263809
+  },
+  "incipit": {
+   "match": 0.6285714285714286,
+   "text": "Rönged-e az oldal Verre gondolva? Rönged-e az oldal Verre gondolva? Szóvén ír ide meg, meg nem allan elvállt."
+  }
+ },
+ "MH_0122d": {
+  "pitch": 0.8222335577011108,
+  "richness": 3.2453813552856445,
+  "first_line": "Szépen ragyog az esteli csillag",
+  "vocal_share": 0.8891243917039848,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 0.0001925281685544178,
+   "bass": 5.75016940729256e-07,
+   "other": 0.0011096135713160038,
+   "vocals": 0.008902731351554394
+  },
+  "hnr": 16.795900349902272,
+  "presence": 4.640667915344238,
+  "rhythm": 5.213351726531982,
+  "phoneme": {
+   "conf": 0.47387999296188354,
+   "rate": 0.04536357522010803
+  },
+  "incipit": {
+   "match": 0.49122807017543857,
+   "text": "Téped a nyokos állszélítva. Téped a nyokos állszélítva. Azt! Azt! Azt! Azt! Azt!"
+  }
+ },
+ "MH_1305c": {
+  "pitch": 0.8219775557518005,
+  "richness": -9.38250732421875,
+  "first_line": "Jön a péntek, jön a szombat, vasárnap",
+  "vocal_share": 0.9756216974017502,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 5.5491433670340484e-09,
+   "bass": 4.585966451031709e-08,
+   "other": 0.00027798753581009805,
+   "vocals": 0.011126919649541378
+  },
+  "hnr": 15.939371143563061,
+  "presence": -8.103934288024902,
+  "rhythm": 9.53050708770752,
+  "phoneme": {
+   "conf": 0.6289499402046204,
+   "rate": 0.07871914654970169
+  },
+  "incipit": {
+   "match": 0.6956521739130435,
+   "text": "Ilyen a pintét jön a zumbot, baszár. Csér, Csérgetnágy, baszár, vízreány. Csér, Csérvidó, vagy utvaró, pisztárzó. Ilyen a babára kúsz a sítvály. Csér, Csérvidó,"
+  }
+ },
+ "MH_1304d": {
+  "pitch": 0.6609501242637634,
+  "richness": 1.8373395204544067,
+  "first_line": "Cipellőszájó kevil menyasszony",
+  "vocal_share": 0.9785226546790449,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 1.1583497183664804e-07,
+   "bass": 4.700384081957054e-08,
+   "other": 0.0001629569596843794,
+   "vocals": 0.00742657296359539
+  },
+  "hnr": 6.652492134490997,
+  "presence": 3.9115471839904785,
+  "rhythm": 2.904707193374634,
+  "phoneme": {
+   "conf": 0.3682815432548523,
+   "rate": 0.02334889955818653
+  },
+  "incipit": {
+   "match": 0.0,
+   "text": ""
+  }
+ },
+ "MH_1520a": {
+  "pitch": 0.771128237247467,
+  "richness": -20.634166717529297,
+  "first_line": "Vigyél el, rózsám, vigyél magaddal",
+  "vocal_share": 0.9635838926660099,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 9.801161468203645e-06,
+   "bass": 5.620115643978352e-07,
+   "other": 0.0006903521716594696,
+   "vocals": 0.0182818491011858
+  },
+  "hnr": 17.959113345074627,
+  "presence": -18.4255428314209,
+  "rhythm": 2.8796799182891846,
+  "phoneme": {
+   "conf": 0.5033491253852844,
+   "rate": 0.036691129207611084
+  },
+  "incipit": {
+   "match": 0.49122807017543857,
+   "text": "Tígyar gondol be nek, hogy enem arra játsz el, mert felmaradó a kulán,"
+  }
+ },
+ "MH_1582a": {
+  "pitch": 0.8812307119369507,
+  "richness": -4.577072620391846,
+  "first_line": "Isten legyen hozzád édes kedves apám",
+  "vocal_share": 0.6937787280692032,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 2.9357945550145814e-06,
+   "bass": 4.434576226231002e-07,
+   "other": 0.006266645155847073,
+   "vocals": 0.014198794029653072
+  },
+  "hnr": 23.856378449100166,
+  "presence": -4.064725875854492,
+  "rhythm": 3.7903177738189697,
+  "phoneme": {
+   "conf": 0.4545777440071106,
+   "rate": 0.04736490920186043
+  },
+  "incipit": {
+   "match": 0.41666666666666663,
+   "text": "Tníttol, felszeni. Nincs a fozba tov. Nincs pár dolog, a túl hétet, a pánkú vágyodoorávára. Tudod, tudod, tudod, tudod, a gyereket, a hárgázat, a gyöntet. Köszö"
+  }
+ },
+ "MH_3210b": {
+  "pitch": 0.5130713582038879,
+  "richness": -6.458345413208008,
+  "first_line": "Széles menta, levendula",
+  "vocal_share": 0.9113093769786155,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 0.0007205309229902923,
+   "bass": 6.025788934493903e-07,
+   "other": 0.0005345968529582024,
+   "vocals": 0.005499253980815411
+  },
+  "hnr": 14.74606906542296,
+  "presence": -5.313088893890381,
+  "rhythm": 9.277484893798828,
+  "phoneme": {
+   "conf": 0.46687522530555725,
+   "rate": 0.054703135043382645
+  },
+  "incipit": {
+   "match": 0.0,
+   "text": ""
+  }
+ },
+ "MH_1192a": {
+  "pitch": 0.4728996455669403,
+  "richness": -9.143179893493652,
+  "first_line": "Három színű szőre van a lovamnak",
+  "vocal_share": 0.9338426341256737,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 0.00010599927918519825,
+   "bass": 7.692964487659992e-08,
+   "other": 0.0009961959440261126,
+   "vocals": 0.01406286470592022
+  },
+  "hnr": 18.29328414418174,
+  "presence": -7.772525787353516,
+  "rhythm": 158.8152313232422,
+  "phoneme": {
+   "conf": 0.5702352523803711,
+   "rate": 0.04374520480632782
+  },
+  "incipit": {
+   "match": 0.736842105263158,
+   "text": "Három kinészér van a mamá! Matonánok el kell menni magam, őt hagyják a fere!"
+  }
+ },
+ "MH_2816b": {
+  "pitch": 0.4085329473018646,
+  "richness": 4.1642351150512695,
+  "first_line": "Szép a kék szem, nem tagadom",
+  "vocal_share": 0.9948759997649215,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 2.7661370083365e-08,
+   "bass": 1.773215529965455e-08,
+   "other": 6.471182132372633e-05,
+   "vocals": 0.012567891739308834
+  },
+  "hnr": 11.353071518107072,
+  "presence": 3.6612436771392822,
+  "rhythm": 4.536139488220215,
+  "phoneme": {
+   "conf": 0.5855827927589417,
+   "rate": 0.08739159256219864
+  },
+  "incipit": {
+   "match": 0.8076923076923077,
+   "text": "Szip a kig, de nem tagadom, Én a kigregyen koradtom, Gyere, a barna szemtyug arra, Semblik ezt ész a gara, Semblik ezt ész a gara, Ahogy egy édes édsz az arra, "
+  }
+ },
+ "MH_2675a": {
+  "pitch": 0.38487160205841064,
+  "richness": -5.749489784240723,
+  "first_line": "Nincs Felszegbe olyan asszony",
+  "vocal_share": 0.13192424242738704,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 6.1467439991247375e-06,
+   "bass": 1.0509179446671624e-06,
+   "other": 0.0037765714805573225,
+   "vocals": 0.0005740973283536732
+  },
+  "hnr": -0.10774749708464346,
+  "presence": -1.3553483486175537,
+  "rhythm": 2.3306195735931396,
+  "phoneme": {
+   "conf": 0.0,
+   "rate": 0.0
+  },
+  "incipit": {
+   "match": 0.40816326530612246,
+   "text": "A legyen kialáltal, a legyen kialáltal, a legyen kialáltal a legyen kialáltal..."
+  }
+ },
+ "MH_1100a": {
+  "pitch": 0.3659261465072632,
+  "richness": -16.12814712524414,
+  "first_line": "Bolthajtásos az én szobám",
+  "vocal_share": 0.4204578303853637,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 0.0019560777582228184,
+   "bass": 9.886997531793895e-07,
+   "other": 0.0012657782062888145,
+   "vocals": 0.000919039361178875
+  },
+  "hnr": 4.749207958151715,
+  "presence": -13.294039726257324,
+  "rhythm": 3.290252447128296,
+  "phoneme": {
+   "conf": 0.6593263745307922,
+   "rate": 0.015343562699854374
+  },
+  "incipit": {
+   "match": 0.3783783783783784,
+   "text": "M.H.Ezr.Eig.Zalas Hengel"
+  }
+ },
+ "MH_1046b": {
+  "pitch": 0.8078675866127014,
+  "richness": -4.074432849884033,
+  "first_line": "Süssünk, süssünk valamit, azt is megmondom, hogy mit",
+  "vocal_share": 0.9749354615742957,
+  "vocal": true,
+  "stem_energy": {
+   "drums": 3.429115658093451e-09,
+   "bass": 1.7363035453854536e-08,
+   "other": 0.0001317867572652176,
+   "vocals": 0.005126785486936569
+  },
+  "hnr": 18.855620278545956,
+  "presence": -3.197167158126831,
+  "rhythm": 7.149563789367676,
+  "phoneme": {
+   "conf": 0.5219695568084717,
+   "rate": 0.07859848439693451
+  },
+  "incipit": {
+   "match": 0.0,
+   "text": ""
+  }
+ }
+}

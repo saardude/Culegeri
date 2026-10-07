@@ -1,6 +1,8 @@
 // AudioPlayer (FRONTEND-SPEC 9): one native <audio controls preload="none"> per media.audio[] item
 // with the cylinder / reference label, a download link and the credit line.
 import { useState } from 'react'
+import { Link } from 'react-router'
+import { cylinderOf, formatLegibility, legibilityBand } from '../../data/legibility'
 import { t } from '../../i18n/en'
 import type { MediaItem, Song } from '../../types/song'
 
@@ -18,7 +20,40 @@ export function audioLabel(item: MediaItem, song: Pick<Song, 'source'>): string 
   return item.caption?.trim() || song.source.referenceCode || basename(item.url)
 }
 
-export function AudioPlayer({ item, song, title, index, total }: { item: MediaItem; song: Pick<Song, 'source'>; title: string; index: number; total: number }) {
+/** Legibility of one recording, when it is a scored wax-cylinder track of this record. */
+function LegibilityLine({ item, song }: { item: MediaItem; song: Pick<Song, 'legibility'> }) {
+  const leg = song.legibility
+  const cyl = cylinderOf(item.url)
+  const track = leg && cyl ? leg.tracks[cyl.toLowerCase()] : undefined
+  if (!leg || !track) return null
+  const scoring = cyl?.toLowerCase() === leg.track.toLowerCase()
+  const note = track.clip ? (scoring && leg.clipOnly ? t('song.legibilityClipOnly') : t('song.legibilityClip')) : t('song.legibilityNote')
+  return (
+    <p className="audio__legibility">
+      <span className="mono">{cyl}</span>{' '}
+      <span className="legib-badge">
+        {t('song.legibility', { score: formatLegibility(track.score) })} &middot; {t(`legibility.band.${legibilityBand(track.score)}`)}
+      </span>{' '}
+      <span className="muted">
+        {note} &middot; <Link to="/about#legibility">{t('song.legibilityHow')}</Link>
+      </span>
+    </p>
+  )
+}
+
+export function AudioPlayer({
+  item,
+  song,
+  title,
+  index,
+  total,
+}: {
+  item: MediaItem
+  song: Pick<Song, 'source' | 'legibility'>
+  title: string
+  index: number
+  total: number
+}) {
   const [error, setError] = useState(false)
   const label = total > 1 ? `${t('song.audioLabel', { title })} (${t('song.audioOf', { i: index + 1, n: total })})` : t('song.audioLabel', { title })
   const ref = audioLabel(item, song)
@@ -28,6 +63,7 @@ export function AudioPlayer({ item, song, title, index, total }: { item: MediaIt
         <span className="mono">{ref}</span>
         {total > 1 && <span className="muted"> {t('song.audioOf', { i: index + 1, n: total })}</span>}
       </figcaption>
+      <LegibilityLine item={item} song={song} />
       {error ? (
         <p className="audio__error" role="status">
           {t('song.audioError')}

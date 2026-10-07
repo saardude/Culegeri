@@ -344,6 +344,22 @@
   font-size: var(--fs-13);
 }
 
+.audio__legibility {
+  margin: 0;
+  font-size: var(--fs-12);
+  line-height: var(--lh-snug);
+}
+
+.legib-badge {
+  display: inline-block;
+  padding: 1px var(--space-2);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+}
+
 .audio__meta {
   font-size: var(--fs-12);
 }

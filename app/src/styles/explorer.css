@@ -307,6 +307,42 @@
   background: var(--line-strong);
 }
 
+/* recording facet (wax cylinder + legibility) */
+.recording-facet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.recording-facet__range {
+  display: flex;
+  flex-direction: column;
+}
+
+.recording-facet__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.recording-facet__values {
+  font-size: var(--fs-12);
+  color: var(--ink-2);
+}
+
+.recording-facet__scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-11);
+}
+
+.recording-facet__hint {
+  margin: var(--space-2) 0 0;
+  font-size: var(--fs-12);
+  line-height: var(--lh-snug);
+}
+
 /* ---- Place tree -------------------------------------------------------------------- */
 .tree-header {
   display: flex;
@@ -592,4 +628,30 @@
 
 .sheet__footer .btn {
   flex: 1;
+}
+
+/* legibility meter in result rows (wax-cylinder records) */
+.legib-meter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--fs-11);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.legib-meter__bars {
+  display: inline-flex;
+  gap: 1px;
+}
+
+.legib-meter__bars i {
+  width: 3px;
+  height: 10px;
+  border-radius: 1px;
+  background: var(--line);
+}
+
+.legib-meter__bars i.is-on {
+  background: var(--ink-2);
 }

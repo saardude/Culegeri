@@ -1,0 +1,282 @@
+{
+ "MH_4407a": {
+  "legib": 0.605,
+  "clarity": 0.525,
+  "noise": 0.726,
+  "clarity_parts": {
+   "intelligibility": 0.53,
+   "rhythm": 0.38,
+   "words": 0.66
+  },
+  "noise_parts": {
+   "background": 0.66,
+   "hiss": 1.0
+  }
+ },
+ "MH_1381b": {
+  "legib": 0.575,
+  "clarity": 0.819,
+  "noise": 0.21,
+  "clarity_parts": {
+   "intelligibility": 0.86,
+   "rhythm": 0.95,
+   "words": 0.6
+  },
+  "noise_parts": {
+   "background": 0.1,
+   "hiss": 0.63
+  }
+ },
+ "MH_0432e": {
+  "legib": 0.595,
+  "clarity": 0.422,
+  "noise": 0.855,
+  "clarity_parts": {
+   "intelligibility": 0.64,
+   "rhythm": 0.41,
+   "words": 0.0
+  },
+  "noise_parts": {
+   "background": 0.82,
+   "hiss": 1.0
+  }
+ },
+ "MH_3121b": {
+  "legib": 0.414,
+  "clarity": 0.332,
+  "noise": 0.537,
+  "clarity_parts": {
+   "intelligibility": 0.48,
+   "rhythm": 0.36,
+   "words": 0.0
+  },
+  "noise_parts": {
+   "background": 0.44,
+   "hiss": 0.93
+  }
+ },
+ "MH_1015d": {
+  "legib": 0.247,
+  "clarity": 0.237,
+  "noise": 0.261,
+  "clarity_parts": {
+   "intelligibility": 0.36,
+   "rhythm": 0.23,
+   "words": 0.0
+  },
+  "noise_parts": {
+   "background": 0.09,
+   "hiss": 0.93
+  }
+ },
+ "MH_0469a": {
+  "legib": 0.33,
+  "clarity": 0.244,
+  "noise": 0.458,
+  "clarity_parts": {
+   "intelligibility": 0.24,
+   "rhythm": 0.31,
+   "words": 0.19
+  },
+  "noise_parts": {
+   "background": 0.32,
+   "hiss": 1.0
+  }
+ },
+ "MH_2380c": {
+  "legib": 0.55,
+  "clarity": 0.642,
+  "noise": 0.413,
+  "clarity_parts": {
+   "intelligibility": 0.8,
+   "rhythm": 0.53,
+   "words": 0.44
+  },
+  "noise_parts": {
+   "background": 0.32,
+   "hiss": 0.79
+  }
+ },
+ "MH_0816b": {
+  "legib": 0.446,
+  "clarity": 0.374,
+  "noise": 0.553,
+  "clarity_parts": {
+   "intelligibility": 0.55,
+   "rhythm": 0.39,
+   "words": 0.0
+  },
+  "noise_parts": {
+   "background": 0.46,
+   "hiss": 0.91
+  }
+ },
+ "MH_2463b": {
+  "legib": 0.395,
+  "clarity": 0.452,
+  "noise": 0.31,
+  "clarity_parts": {
+   "intelligibility": 0.61,
+   "rhythm": 0.12,
+   "words": 0.47
+  },
+  "noise_parts": {
+   "background": 0.19,
+   "hiss": 0.78
+  }
+ },
+ "MH_0122d": {
+  "legib": 0.192,
+  "clarity": 0.169,
+  "noise": 0.227,
+  "clarity_parts": {
+   "intelligibility": 0.0,
+   "rhythm": 0.4,
+   "words": 0.27
+  },
+  "noise_parts": {
+   "background": 0.06,
+   "hiss": 0.91
+  }
+ },
+ "MH_1305c": {
+  "legib": 0.529,
+  "clarity": 0.48,
+  "noise": 0.602,
+  "clarity_parts": {
+   "intelligibility": 0.21,
+   "rhythm": 0.94,
+   "words": 0.57
+  },
+  "noise_parts": {
+   "background": 0.5,
+   "hiss": 1.0
+  }
+ },
+ "MH_1304d": {
+  "legib": 0.266,
+  "clarity": 0.183,
+  "noise": 0.39,
+  "clarity_parts": {
+   "intelligibility": 0.31,
+   "rhythm": 0.11,
+   "words": 0.0
+  },
+  "noise_parts": {
+   "background": 0.31,
+   "hiss": 0.72
+  }
+ },
+ "MH_1520a": {
+  "legib": 0.317,
+  "clarity": 0.193,
+  "noise": 0.503,
+  "clarity_parts": {
+   "intelligibility": 0.19,
+   "rhythm": 0.11,
+   "words": 0.27
+  },
+  "noise_parts": {
+   "background": 0.38,
+   "hiss": 1.0
+  }
+ },
+ "MH_1582a": {
+  "legib": 0.235,
+  "clarity": 0.133,
+  "noise": 0.388,
+  "clarity_parts": {
+   "intelligibility": 0.07,
+   "rhythm": 0.22,
+   "words": 0.17
+  },
+  "noise_parts": {
+   "background": 0.24,
+   "hiss": 0.99
+  }
+ },
+ "MH_3210b": {
+  "legib": 0.341,
+  "clarity": 0.322,
+  "noise": 0.37,
+  "clarity_parts": {
+   "intelligibility": 0.19,
+   "rhythm": 0.91,
+   "words": 0.0
+  },
+  "noise_parts": {
+   "background": 0.29,
+   "hiss": 0.68
+  }
+ },
+ "MH_1192a": {
+  "legib": 0.562,
+  "clarity": 0.468,
+  "noise": 0.702,
+  "clarity_parts": {
+   "intelligibility": 0.12,
+   "rhythm": 1.0,
+   "words": 0.62
+  },
+  "noise_parts": {
+   "background": 0.63,
+   "hiss": 1.0
+  }
+ },
+ "MH_2816b": {
+  "legib": 0.615,
+  "clarity": 0.594,
+  "noise": 0.646,
+  "clarity_parts": {
+   "intelligibility": 0.67,
+   "rhythm": 0.32,
+   "words": 0.73
+  },
+  "noise_parts": {
+   "background": 0.57,
+   "hiss": 0.95
+  }
+ },
+ "MH_2675a": {
+  "legib": 0.081,
+  "clarity": 0.084,
+  "noise": 0.078,
+  "clarity_parts": {
+   "intelligibility": 0.07,
+   "rhythm": 0.04,
+   "words": 0.15
+  },
+  "noise_parts": {
+   "background": 0.05,
+   "hiss": 0.18
+  }
+ },
+ "MH_1100a": {
+  "legib": 0.204,
+  "clarity": 0.138,
+  "noise": 0.304,
+  "clarity_parts": {
+   "intelligibility": 0.14,
+   "rhythm": 0.16,
+   "words": 0.11
+  },
+  "noise_parts": {
+   "background": 0.14,
+   "hiss": 0.97
+  }
+ },
+ "MH_1046b": {
+  "legib": 0.546,
+  "clarity": 0.362,
+  "noise": 0.822,
+  "clarity_parts": {
+   "intelligibility": 0.4,
+   "rhythm": 0.64,
+   "words": 0.0
+  },
+  "noise_parts": {
+   "background": 0.79,
+   "hiss": 0.93
+  }
+ }
+}
