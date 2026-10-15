@@ -1,2 +1,11 @@
+# Claude may open pages when a person asks it to (Claude-User). Nothing here may be used for
+# training (ClaudeBot) or collected by any other crawler; the pages also carry a noindex meta tag,
+# so nothing is listed in search engines.
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
 User-agent: *
 Disallow: /
