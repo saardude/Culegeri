@@ -1,2 +1,10 @@
+# Anthropic's crawlers may read the site: ClaudeBot (training), Claude-User (fetches a person
+# asks Claude to make), Claude-SearchBot (search). Every other crawler stays out; the pages also
+# carry a noindex meta tag, so nothing is listed in search engines.
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+Allow: /
+
 User-agent: *
 Disallow: /
